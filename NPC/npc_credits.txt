@@ -1,0 +1,241 @@
+* Shadow (shadow)
+
+  Textures
+
+  Author(s) : Dr. Jamgo
+  License(s): CC0
+  Url(s)    : https://opengameart.org/content/shadow-for-lpc-sprite
+
+  Fixed colors
+
+  Author(s) : Dr. Jamgo
+  License(s): CC0
+  Url(s)    : https://opengameart.org/content/shadow-for-lpc-sprite
+
+* Troll (body)
+
+  Textures
+
+  Author(s) : dalonedrau
+              Stephen Challener (Redshrike)
+              Eliza Wyatt (ElizaWy)
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/lpc-barbarian-sprite-base
+              https://opengameart.org/content/lpc-muscular-swing-animation
+              https://opengameart.org/content/lpc-muscular-hurt-animation
+
+  Primary colors
+
+  Author(s) : Lanea Zimmerman (Sharm)
+              Stephen Challener (Redshrike)
+              Manuel Riecke (MrBeast)
+              Charles Sanchez (CharlesGabriel)
+              Zi Ye
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/sinbad-the-ogre
+              https://opengameart.org/content/four-characters-my-lpc-entries
+              https://opengameart.org/content/lpc-male-sheets
+
+  Fixed colors
+
+  Author(s) : Lanea Zimmerman (Sharm)
+              Stephen Challener (Redshrike)
+              Manuel Riecke (MrBeast)
+              Charles Sanchez (CharlesGabriel)
+              Zi Ye
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/sinbad-the-ogre
+              https://opengameart.org/content/four-characters-my-lpc-entries
+              https://opengameart.org/content/lpc-male-sheets
+
+* Loose (pants)
+
+  Textures
+
+  Author(s) : Nila122
+              Johannes Sjölund (wulax)
+              Stephen Challener (Redshrike)
+  License(s): CC-BY-SA 3.0
+              GPL 2.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-pirates
+              https://opengameart.org/content/more-lpc-clothes-and-hair
+
+  Primary colors
+
+  Author(s) : Eliza Wyatt (ElizaWy)
+              Joe White
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear
+
+* Long Boots (shoes)
+
+  Textures
+
+  Author(s) : bluecarrot16
+              Nila122
+  License(s): CC-BY-SA 3.0
+              GPL 2.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-clothes-and-hair
+              https://opengameart.org/content/lpc-santa
+              http://opengameart.org/content/lpc-clothing-updates
+
+  Primary colors
+
+  Author(s) : Eliza Wyatt (ElizaWy)
+              Joe White
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear
+
+* Bow (shirt)
+
+  Textures
+
+  Author(s) : bluecarrot16
+              Thane Brimhall (pennomi)
+              laetissima
+              pflat
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-2-characters
+              https://opengameart.org/content/lpc-gentleman
+
+  Primary colors
+
+  Author(s) : Nila122
+  License(s): CC-BY-SA 3.0
+              GPL 2.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-bandages
+
+* Troll (head)
+
+  Textures
+
+  Author(s) : bluecarrot16
+              AntumDeluge
+              Tuomo Untinen (reemax)
+  License(s): CC-BY 3.0
+  Url(s)    : https://opengameart.org/content/musclemanogreminotaur
+              https://opengameart.org/content/trolls-0
+              https://opengameart.org/content/lpc-folk
+
+  Primary colors
+
+  Author(s) : Lanea Zimmerman (Sharm)
+              Stephen Challener (Redshrike)
+              Manuel Riecke (MrBeast)
+              Charles Sanchez (CharlesGabriel)
+              Zi Ye
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/sinbad-the-ogre
+              https://opengameart.org/content/four-characters-my-lpc-entries
+              https://opengameart.org/content/lpc-male-sheets
+
+  Fixed colors
+
+  Author(s) : Lanea Zimmerman (Sharm)
+              Stephen Challener (Redshrike)
+              Manuel Riecke (MrBeast)
+              Charles Sanchez (CharlesGabriel)
+              Zi Ye
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/sinbad-the-ogre
+              https://opengameart.org/content/four-characters-my-lpc-entries
+              https://opengameart.org/content/lpc-male-sheets
+
+* Troll (eyes)
+
+  Textures
+
+  Author(s) : bluecarrot16
+              AntumDeluge
+              Tuomo Untinen (reemax)
+  License(s): CC-BY 3.0
+  Url(s)    : https://opengameart.org/content/musclemanogreminotaur
+              https://opengameart.org/content/trolls-0
+              https://opengameart.org/content/lpc-folk
+
+  Primary colors
+
+  Author(s) : Lanea Zimmerman (Sharm)
+              Stephen Challener (Redshrike)
+              Manuel Riecke (MrBeast)
+              Charles Sanchez (CharlesGabriel)
+              Zi Ye
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/sinbad-the-ogre
+              https://opengameart.org/content/four-characters-my-lpc-entries
+              https://opengameart.org/content/lpc-male-sheets
+
+* Trimmed Cape (back)
+
+  Textures
+
+  Author(s) : David Conway Jr. (JaidynReiman)
+              pflat
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more
+
+  Primary colors
+
+  Author(s) : Eliza Wyatt (ElizaWy)
+              Joe White
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear
+
+  Secondary colors
+
+  Author(s) : David Conway Jr. (JaidynReiman)
+              Johannes Sjölund (wulax)
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+
+  Fixed colors
+
+  Author(s) : DarkwallLKE
+              Charles Sanchez (CharlesGabriel)
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+              https://opengameart.org/content/lpc-crown
+
+* Scythe (mainhand)
+
+  Textures
+
+  Author(s) : bluecarrot16
+  License(s): CC-BY-SA 3.0
+  Url(s)    : https://opengameart.org/content/lpc-extended-weapon-animations
+
+  Primary colors
+
+  Author(s) : DarkwallLKE
+              Tuomo Untinen (reemax)
+              pflat
+  License(s): CC-BY-SA 3.0
+              GPL 2.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-items-and-game-effects
+              https://opengameart.org/content/lpc-axe
+
+  Secondary colors
+
+  Author(s) : Eliza Wyatt (ElizaWy)
+              Joe White
+  License(s): CC-BY-SA 3.0
+              GPL 3.0
+  Url(s)    : https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear
+

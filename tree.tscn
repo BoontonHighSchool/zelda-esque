@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://e4inx8xeejd5"]
+
+[ext_resource type="Texture2D" uid="uid://1m7pdfrpvaa5" path="res://Outdoor decoration/Oak_Tree.png" id="1_brfkd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpjt8"]
+radius = 7.0
+
+[node name="Tree" type="StaticBody2D" unique_id=2096921131]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662281704]
+shape = SubResource("CircleShape2D_tpjt8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1442380730]
+position = Vector2(0, -20)
+texture = ExtResource("1_brfkd")
