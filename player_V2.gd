@@ -112,6 +112,8 @@ func die() -> void:
 	current_state = State.DEAD
 	velocity = Vector2.ZERO
 	print("Player has died!")
+	await get_tree().create_timer(2).timeout
+	get_tree().reload_current_scene()
 
 func flash_sprite() -> void:
 	flash_tween = create_tween()

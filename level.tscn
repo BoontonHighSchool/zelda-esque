@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://pcbwqkqwg7hp" path="res://house.tscn" id="5_1ainy"]
 [ext_resource type="PackedScene" uid="uid://di7iepkgbf7ko" path="res://enemy_demo.tscn" id="7_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://tspquppxp2da" path="res://npc.tscn" id="8_km5ld"]
-[ext_resource type="PackedScene" uid="uid://duk538a36ywpc" path="res://npc_demo.tscn" id="9_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://dtw21f0hrrfb7" path="res://player.tscn" id="11_2orkt"]
 
 [node name="Level" type="Node2D" unique_id=95387734]
@@ -21,6 +20,7 @@ tile_map_data = PackedByteArray("AAD8//3/CwAAAAAAAAD8//7/CwAAAAAAAAD8////CwAAAAA
 tile_set = ExtResource("1_0b4ue")
 
 [node name="Walls" type="TileMapLayer" parent="LevelDesign" unique_id=185180033]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAUAAoAAAABAAAAAAAVAAoAAAACAAAAAAAWAAoAAAACAAAAAAAXAAoAAAACAAAAAAAYAAoAAAACAAAAAAAZAAoAAAACAAAAAAAaAAoAAAACAAAAAAAbAAoAAAACAAAAAAAcAAoAAAACAAAAAAAdAAoAAAACAAAAAAAeAAoAAAACAAAAAAAfAAoAAAACAAAAAAAgAAoAAAACAAAAAAAhAAoAAAACAAAAAAAiAAoAAAACAAAAAAAjAAoAAAACAAAAAAAkAAoAAAACAAAAAAAlAAoAAAACAAAAAAAmAAoAAAACAAAAAAAnAAoAAAACAAAAAAAoAAoAAAACAAAAAAApAAoAAAACAAAAAAAqAAoAAAACAAAAAAArAAoAAAACAAAAAAAsAAoAAAACAAAAAAAtAAoAAAACAAAAAAAuAAoAAAACAAAAAAAvAAoAAAACAAAAAAAwAAoAAAADAAAAAAA1AAoAAAABAAAAAAA4AAoAAAADAAAAAAA2AAoAAAACAAAAAAA3AAoAAAACAAAAAAARAAwAAAAAAAAAAAARAA0AAAAAAAEAAAARAA4AAAAAAAEAAAARAA8AAAAAAAEAAAARABAAAAAAAAEAAAARABEAAAAAAAEAAAARABIAAAAAAAEAAAARABMAAAAAAAEAAAARABQAAAAAAAIAAAALACcAAgABAAIAAAAMACcAAgABAAIAAAANACcAAgABAAIAAAAOACcAAgABAAIAAAAPACcAAgABAAIAAAAQACcAAgABAAIAAAARACcAAgABAAIAAAASACcAAgABAAIAAAATACcAAgABAAIAAAAUACcAAgABAAIAAAAVACcAAgABAAIAAAAWACcAAgABAAIAAAAXACcAAgABAAIAAAAYACcAAgABAAIAAAAZACcAAgABAAIAAAAaACcAAgABAAIAAAAbACcAAgABAAIAAAAcACcAAgABAAIAAAAdACcAAgABAAIAAAAeACcAAgABAAIAAAAfACcAAgABAAIAAAAgACcAAgABAAIAAAAhACcAAgABAAIAAAAiACcAAgABAAIAAAAjACcAAgABAAIAAAAkACcAAgABAAIAAAAlACcAAgABAAIAAAAmACcAAgABAAIAAAAnACcAAgABAAIAAAAoACcAAgABAAIAAAApACcAAgABAAIAAAAqACcAAgABAAIAAAArACcAAgABAAIAAAAsACcAAgABAAIAAAAtACcAAgABAAIAAAAuACcAAgABAAIAAAAvACcAAgABAAIAAAAwACcAAgABAAIAAAAxACcAAgABAAIAAAAyACcAAgABAAIAAAAzACcAAgABAAIAAAA0ACcAAgABAAIAAAA1ACcAAgABAAIAAAA2ACcAAgABAAIAAAA3ACcAAgABAAIAAAA4ACcAAgABAAIAAAA5ACcAAgABAAIAAAA6ACcAAgABAAIAAAA7ACcAAgACAAIAAAA7ACYAAgACAAEAAAA7ACUAAgACAAEAAAA7ACQAAgACAAEAAAA7ACMAAgAAAAMAAAA8ACMAAgABAAIAAAA9ACMAAgABAAIAAAA+ACMAAgABAAIAAAA/ACMAAgABAAIAAABAACMAAgABAAIAAABBACMAAgABAAIAAABCACMAAgABAAIAAABDACMAAgABAAIAAABEACMAAgABAAIAAABFACMAAgACAAIAAABFACIAAgACAAEAAABFACEAAgACAAEAAABFACAAAgACAAEAAABFAB8AAgACAAEAAABFAB4AAgACAAEAAABFAB0AAgACAAEAAABFABwAAgACAAEAAABFABsAAgACAAEAAABFABoAAgACAAEAAABFABkAAgACAAEAAABFABgAAgACAAEAAABFABcAAgACAAEAAABFABYAAgACAAEAAABFABUAAgACAAEAAABFABQAAgACAAEAAABFABMAAgACAAEAAABFABIAAgACAAEAAABFABEAAgACAAEAAABFABAAAgACAAEAAAAKACcAAgAAAAIAAAAKACYAAgAAAAEAAAAKACUAAgAAAAEAAAAKACQAAgAAAAEAAAAKACMAAgAAAAEAAAAKACIAAgAAAAEAAAAKACEAAgAAAAEAAAAKACAAAgAAAAEAAAAKAB8AAgAAAAEAAAAKAB4AAgAAAAEAAAAKAB0AAgABAAMAAAAJAB0AAgABAAIAAAAIAB0AAgABAAIAAAAHAB0AAgABAAIAAAAGAB0AAgABAAIAAAAFAB0AAgABAAIAAAAEAB0AAgABAAIAAAADAB0AAgAAAAIAAAADABwAAgAAAAEAAAADABsAAgAAAAEAAAADABoAAgAAAAEAAAADABkAAgAAAAEAAAADABgAAgAAAAEAAAADABcAAgAAAAEAAAADABYAAgAAAAEAAAADABUAAgAAAAEAAAADABQAAgAAAAEAAAADABMAAgAAAAAAAAAEABMAAgABAAAAAAAFABMAAgABAAAAAAAGABMAAgABAAAAAAAHABMAAgABAAQAAAAHABIAAgAAAAEAAAAHABEAAgAAAAEAAAAHABAAAgAAAAEAAAAHAA8AAgAAAAEAAAAHAA4AAgAAAAEAAAAHAA0AAgABAAMAAAAGAA0AAgABAAIAAAAFAA0AAgABAAIAAAAEAA0AAgABAAIAAAADAA0AAgABAAIAAAACAA0AAgABAAIAAAABAA0AAgAAAAIAAAABAAwAAgAAAAEAAAABAAsAAgAAAAEAAAABAAoAAgAAAAEAAAABAAkAAgAAAAEAAAABAAgAAgAAAAEAAAABAAcAAgAAAAEAAAABAAYAAgAAAAEAAAABAAUAAgAAAAEAAAABAAQAAgAAAAEAAAABAAMAAgAAAAEAAAABAAIAAgAAAAEAAAABAAEAAgAAAAAAAAACAAEAAgABAAAAAAADAAEAAgABAAAAAAAEAAEAAgABAAAAAAAFAAEAAgABAAAAAAAGAAEAAgABAAAAAAAHAAEAAgABAAAAAAAIAAEAAgABAAAAAAAJAAEAAgABAAAAAAAKAAEAAgABAAAAAAALAAEAAgABAAAAAAAMAAEAAgABAAAAAAANAAEAAgABAAAAAAAOAAEAAgABAAAAAAAPAAEAAgABAAAAAAAQAAEAAgABAAAAAAARAAEAAgABAAAAAAASAAEAAgABAAAAAAATAAEAAgABAAAAAAAUAAEAAgABAAAAAAAVAAEAAgABAAAAAAAWAAEAAgABAAAAAAAXAAEAAgABAAAAAAAYAAEAAgABAAAAAAAZAAEAAgABAAAAAAAaAAEAAgABAAAAAAAbAAEAAgABAAAAAAAcAAEAAgABAAAAAAAdAAEAAgABAAAAAAAeAAEAAgABAAAAAAAfAAEAAgABAAAAAAAgAAEAAgABAAAAAAAhAAEAAgABAAAAAAAiAAEAAgABAAAAAAAjAAEAAgABAAAAAAAkAAEAAgABAAAAAAAlAAEAAgABAAAAAAAmAAEAAgABAAAAAAAnAAEAAgABAAAAAAAoAAEAAgACAAAAAAAoAAIAAgACAAEAAAAoAAMAAgACAAEAAAAoAAQAAgACAAEAAAAoAAUAAgAAAAQAAAApAAUAAgABAAAAAAAqAAUAAgABAAAAAAArAAUAAgABAAAAAAAsAAUAAgABAAAAAAAtAAUAAgABAAAAAAAuAAUAAgABAAAAAAAvAAUAAgABAAAAAAAwAAUAAgABAAAAAAAxAAUAAgABAAAAAAAyAAUAAgABAAAAAAAzAAUAAgABAAAAAAA0AAUAAgABAAAAAAA1AAUAAgABAAQAAAA1AAQAAgAAAAEAAAA1AAMAAgAAAAEAAAA1AAIAAgAAAAAAAAA2AAIAAgABAAAAAAA3AAIAAgABAAAAAAA4AAIAAgABAAAAAAA5AAIAAgABAAQAAAA5AAEAAgAAAAEAAAA5AAAAAgAAAAAAAAA6AAAAAgABAAAAAAA7AAAAAgABAAAAAAA8AAAAAgABAAAAAAA9AAAAAgABAAAAAAA+AAAAAgABAAAAAAA/AAAAAgABAAAAAABAAAAAAgABAAAAAABBAAAAAgABAAAAAABCAAAAAgACAAAAAABCAAEAAgACAAEAAABCAAIAAgACAAEAAABCAAMAAgACAAEAAABCAAQAAgAAAAQAAABDAAQAAgABAAAAAABEAAQAAgABAAAAAABFAAQAAgACAAAAAABFAAUAAgACAAEAAABFAAYAAgACAAEAAABFAAcAAgACAAEAAABFAAgAAgACAAEAAABFAAkAAgACAAEAAABFAAoAAgACAAEAAABFAAsAAgACAAEAAABFAAwAAgACAAEAAABFAA0AAgACAAEAAABFAA4AAgACAAEAAABFAA8AAgACAAEAAAA=")
 tile_set = ExtResource("2_f2txt")
 
@@ -33,105 +33,139 @@ tile_set = ExtResource("3_1ainy")
 y_sort_enabled = true
 
 [node name="Tree" parent="Objects" unique_id=91208123 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(179, 78)
 
 [node name="Tree2" parent="Objects" unique_id=735509066 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(91, 179)
 
 [node name="Tree3" parent="Objects" unique_id=1831709210 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(235, 214)
 
 [node name="Tree4" parent="Objects" unique_id=516912904 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(156, 336)
 
 [node name="Tree5" parent="Objects" unique_id=731294774 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(436, 117)
 
 [node name="Tree6" parent="Objects" unique_id=1262530195 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(463, 130)
 
 [node name="Tree7" parent="Objects" unique_id=678184699 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(465, 97)
 
 [node name="Tree8" parent="Objects" unique_id=63805114 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(426, 80)
 
 [node name="Tree9" parent="Objects" unique_id=1627776815 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(403, 108)
 
 [node name="Tree10" parent="Objects" unique_id=1629654816 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(374, 125)
 
 [node name="Tree11" parent="Objects" unique_id=869421217 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(495, 140)
 
 [node name="Tree12" parent="Objects" unique_id=1283958282 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(522, 114)
 
 [node name="Tree13" parent="Objects" unique_id=658184788 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1004, 168)
 
 [node name="Tree14" parent="Objects" unique_id=1018914412 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(994, 198)
 
 [node name="Tree15" parent="Objects" unique_id=616915002 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1015, 209)
 
 [node name="Tree16" parent="Objects" unique_id=1613412565 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1043, 194)
 
 [node name="Tree17" parent="Objects" unique_id=1667405399 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1032, 233)
 
 [node name="Tree18" parent="Objects" unique_id=271154432 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(985, 273)
 
 [node name="Tree19" parent="Objects" unique_id=1638691784 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1016, 296)
 
 [node name="Tree20" parent="Objects" unique_id=1748185076 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(997, 334)
 
 [node name="Tree21" parent="Objects" unique_id=764739091 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1056, 324)
 
 [node name="Tree22" parent="Objects" unique_id=948957797 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1042, 370)
 
 [node name="Tree23" parent="Objects" unique_id=1206084398 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1014, 405)
 
 [node name="Tree24" parent="Objects" unique_id=1632772243 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1075, 425)
 
 [node name="Tree25" parent="Objects" unique_id=458266705 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(969, 425)
 
 [node name="Tree26" parent="Objects" unique_id=751910582 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(793, 115)
 
 [node name="Tree27" parent="Objects" unique_id=20885470 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(134, 596)
 
 [node name="Tree28" parent="Objects" unique_id=1626811188 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(96, 519)
 
 [node name="Tree29" parent="Objects" unique_id=176808494 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(85, 284)
 
 [node name="Tree30" parent="Objects" unique_id=1640213314 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(50, 492)
 
 [node name="Tree31" parent="Objects" unique_id=1087981654 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(224, 592)
 
 [node name="Tree32" parent="Objects" unique_id=276852431 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(1036, 531)
 
 [node name="Tree33" parent="Objects" unique_id=1784304264 instance=ExtResource("4_f2txt")]
+y_sort_enabled = true
 position = Vector2(131, 438)
 
 [node name="House" parent="Objects" unique_id=1195292082 instance=ExtResource("5_1ainy")]
+y_sort_enabled = true
 position = Vector2(530, 394)
 
 [node name="Player" parent="." unique_id=1759758366 instance=ExtResource("11_2orkt")]
@@ -139,16 +173,16 @@ y_sort_enabled = true
 position = Vector2(490, 537)
 scale = Vector2(0.5, 0.5)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2049024382]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1772880694]
+y_sort_enabled = true
 zoom = Vector2(2, 2)
 
 [node name="Enemy-Demo" parent="." unique_id=1874238495 instance=ExtResource("7_n6hdu")]
+y_sort_enabled = true
 position = Vector2(352, 388)
 scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="." unique_id=546825552 instance=ExtResource("8_km5ld")]
+y_sort_enabled = true
 position = Vector2(513, 252)
 scale = Vector2(0.5, 0.5)
-
-[node name="NPC-Demo" parent="." unique_id=1215693693 instance=ExtResource("9_i2t4f")]
-position = Vector2(694, 384)

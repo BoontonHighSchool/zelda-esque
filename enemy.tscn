@@ -530,20 +530,17 @@ shape = SubResource("CircleShape2D_tpjt8")
 debug_color = Color(0.8142059, 0.40225276, 0.19956818, 0.41960785)
 
 [node name="Enter" type="Area2D" parent="." unique_id=1057893177]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter" unique_id=2107723870]
 shape = SubResource("CircleShape2D_3ad1m")
 
 [node name="Exit" type="Area2D" parent="." unique_id=847353425]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=82818881]
 shape = SubResource("CircleShape2D_dpcgo")
 debug_color = Color(0.78119415, 0.2863171, 0.8235102, 0.41960785)
 
 [node name="Hit" type="Area2D" parent="." unique_id=410284449]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit" unique_id=1566123632]
 shape = SubResource("CircleShape2D_cvmey")
