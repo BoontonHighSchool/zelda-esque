@@ -163,16 +163,18 @@ func check_attack_hits() -> void:
 	var overlapping_areas: Array[Area2D] = attack_area.get_overlapping_areas()
 
 	for area in overlapping_areas:
+		
+		if area.name == "Hit":
 
-		var enemy: Node = area.get_parent()
-
-		if enemy == null:
-			continue
-
-		if enemy.has_method("take_damage") and not hit_enemies.has(enemy):
-
-			hit_enemies.append(enemy)
-			enemy.take_damage(attack_damage)
+			var enemy: Node = area.get_parent()
+	
+			if enemy == null:
+				continue
+	
+			if enemy.has_method("take_damage") and not hit_enemies.has(enemy):
+	
+				hit_enemies.append(enemy)
+				enemy.take_damage(attack_damage)
 
 
 # ==================================================

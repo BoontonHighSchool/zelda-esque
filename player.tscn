@@ -546,11 +546,12 @@ animation = &"die"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235283993]
 shape = SubResource("CircleShape2D_tpjt8")
 
-[node name="AttackPivot" type="Node2D" parent="." unique_id=1375952329]
+[node name="AttackPivot" type="Node2D" parent="." unique_id=401911155]
 position = Vector2(0, -13)
 
 [node name="Attack" type="Area2D" parent="AttackPivot" unique_id=1289545188]
+position = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot/Attack" unique_id=1643173338]
-position = Vector2(30, 0)
+position = Vector2(30, 12)
 shape = SubResource("CircleShape2D_3ad1m")
