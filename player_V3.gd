@@ -76,7 +76,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	update_animation()
 
-
 # ==================================================
 # PLAYER MOVEMENT & INPUT
 # ==================================================
@@ -136,26 +135,22 @@ func update_animation() -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-
-	# Return control after attack animation
 	if current_state == State.ATTACK:
 		current_state = State.IDLE
-
 
 # ==================================================
 # COMBAT & ATTACKING
 # ==================================================
 
 func start_attack() -> void:
-
 	current_state = State.ATTACK
 	velocity = Vector2.ZERO
-
-	# Reset enemies hit during this swing
 	hit_enemies.clear()
-
-	# Rotate attack pivot to face player direction
 	attack_pivot.rotation = last_dir_index * PI / 2.0
+
+	# Restart the attack animation, even if it is the same direction
+	var anim_name: String = "attack" + str(last_dir_index)
+	sprite.play(anim_name)
 
 
 func check_attack_hits() -> void:
