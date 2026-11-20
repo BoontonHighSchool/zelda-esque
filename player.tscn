@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtw21f0hrrfb7"]
 
-[ext_resource type="Script" uid="uid://cfe2sp7w68bac" path="res://player_V2.gd" id="1_sweqy"]
+[ext_resource type="Script" uid="uid://dtx1hurnahk74" path="res://player_V3.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://cjnej4175d5bb" path="res://Art/player_slash.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://b3n705oki1i8w" path="res://Art/player_hurt.png" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://blk3jpy5t0oo2" path="res://Art/player_idle.png" id="4_1jxqw"]
@@ -532,6 +532,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpjt8"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ad1m"]
+radius = 20.09975
+
 [node name="Player" type="CharacterBody2D" unique_id=1759758366 groups=["player"]]
 script = ExtResource("1_sweqy")
 
@@ -542,3 +545,12 @@ animation = &"die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235283993]
 shape = SubResource("CircleShape2D_tpjt8")
+
+[node name="AttackPivot" type="Node2D" parent="." unique_id=1375952329]
+position = Vector2(0, -13)
+
+[node name="Attack" type="Area2D" parent="AttackPivot" unique_id=1289545188]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot/Attack" unique_id=1643173338]
+position = Vector2(30, 0)
+shape = SubResource("CircleShape2D_3ad1m")

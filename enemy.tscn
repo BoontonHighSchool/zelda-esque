@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://61ty54wgafit"]
 
 [ext_resource type="Texture2D" uid="uid://cl02pwql2sinj" path="res://Art/NewEnemy_idle.png" id="1_4gyqm"]
-[ext_resource type="Script" uid="uid://cv4ddqd7bt3pc" path="res://enemyV2.gd" id="1_iifgy"]
+[ext_resource type="Script" uid="uid://bfd37wre4jh6o" path="res://enemy_V3.gd" id="1_epg4t"]
 [ext_resource type="Texture2D" uid="uid://r8util8n2sh6" path="res://Art/NewEnemy_smash.png" id="2_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://8hdgjnkp4cdo" path="res://Art/NewEnemy_walk.png" id="3_epg4t"]
 [ext_resource type="Texture2D" uid="uid://ch7cr0vhgfelc" path="res://Art/NewEnemy_hurt.png" id="4_epg4t"]
@@ -516,9 +516,7 @@ radius = 25.0
 radius = 25.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1145239981]
-script = ExtResource("1_iifgy")
-stop_distance = 20.0
-attack_cooldown_time = 0.75
+script = ExtResource("1_epg4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=669260520]
 sprite_frames = SubResource("SpriteFrames_3ad1m")

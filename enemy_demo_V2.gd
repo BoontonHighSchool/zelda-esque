@@ -1,116 +1,116 @@
+
 extends CharacterBody2D
-#Ebemy V2
-# --------------------------------------------------
+
+
+# ==================================================
 # VARIABLES
-# --------------------------------------------------
+# ==================================================
 
-enum State { IDLE, CHASE, ATTACK, DEAD }
-
+# --- MOVEMENT ---
 @export var speed: float = 100.0
 @export var stop_distance: float = 40.0
+
+# --- COMBAT ---
+@export var attack_damage: int = 10
 @export var attack_cooldown_time: float = 1.5
+
+# --- HEALTH ---
 @export var max_health: int = 100
+
 var current_health: int
 
+# --- STATES ---
+enum State { IDLE, CHASE, ATTACK, DEAD }
+
 var current_state: State = State.IDLE
+
+# --- PLAYER DETECTION ---
 var player: CharacterBody2D = null
 var player_chase: bool = false
 
-@export var damage: int = 10
-var has_damaged_player: bool = false
-
-# Direction:
-# 0 = East / Right
-# 1 = South / Down
-# 2 = West / Left
-# 3 = North / Up
-
+# Facing direction:
+# 0 = Right, 1 = Down, 2 = Left, 3 = Up
 var facing_direction: int = 0
 
+# --- DAMAGE FLASH ---
+var flash_tween: Tween
 
-# --------------------------------------------------
+
+# ==================================================
 # NODE REFERENCES
-# --------------------------------------------------
+# ==================================================
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $Attack
 @onready var attack_cooldown: Timer = $AttackCooldown
 
 
-# --------------------------------------------------
-# READY
-# --------------------------------------------------
+# ==================================================
+# INITIALIZATION
+# ==================================================
 
 func _ready() -> void:
+
 	current_health = max_health
+
 	attack_cooldown.wait_time = attack_cooldown_time
 
 	update_attack_direction()
 	play_current_animation()
 
 
-# --------------------------------------------------
-# PHYSICS PROCESS
-# --------------------------------------------------
+# ==================================================
+# MAIN GAME LOOP
+# ==================================================
 
 func _physics_process(_delta: float) -> void:
 
-	# No valid player: stop moving and return to idle.
-	if not player_chase or not is_instance_valid(player):
+	# Stop if the enemy is dead
+	if current_state == State.DEAD:
 		velocity = Vector2.ZERO
-		move_and_slide()
-		change_state(State.IDLE)
 		return
 
-	# Calculate direction and distance to player.
+	# Check for a valid player
+	if not player_chase or not is_instance_valid(player):
+		velocity = Vector2.ZERO
+		change_state(State.IDLE)
+		move_and_slide()
+		return
+
+	# Calculate direction and distance to player
 	var offset: Vector2 = player.global_position - global_position
 	var distance: float = offset.length()
 
-	# Update the direction the enemy faces.
+	# Update facing direction
 	if distance > 0.001:
 		update_facing_direction(offset.normalized())
 
-	# --------------------------------------------------
-	# MOVEMENT
-	# --------------------------------------------------
-
-	# Continue moving toward the player until stop distance.
+	# Handle movement and chasing
 	if distance > stop_distance:
-		var direction: Vector2 = offset.normalized()
-		velocity = direction * speed
 
-		# Do not interrupt an attack animation.
+		velocity = offset.normalized() * speed
+
 		if current_state != State.ATTACK:
 			change_state(State.CHASE)
 
 	else:
+
 		velocity = Vector2.ZERO
 
-		# Do not interrupt an attack animation.
 		if current_state != State.ATTACK:
 			change_state(State.IDLE)
 
-	# --------------------------------------------------
-	# ATTACKING
-	# --------------------------------------------------
-
-	# Attack whenever the player is in range
-	# and the cooldown has finished.
+	# Check whether the player is within attack range
 	if attack_area.overlaps_body(player):
 		if attack_cooldown.is_stopped() and current_state != State.ATTACK:
 			start_attack()
 
-		if current_state == State.ATTACK and not has_damaged_player:
-			player.take_damage(damage)
-			has_damaged_player = true
-
-	# Apply movement.
 	move_and_slide()
 
 
-# --------------------------------------------------
-# FACING DIRECTION
-# --------------------------------------------------
+# ==================================================
+# MOVEMENT & FACING DIRECTION
+# ==================================================
 
 func update_facing_direction(direction: Vector2) -> void:
 
@@ -118,37 +118,28 @@ func update_facing_direction(direction: Vector2) -> void:
 
 	if abs(direction.x) >= abs(direction.y):
 
-		if direction.x >= 0.0:
-			new_direction = 0
-		else:
-			new_direction = 2
+		new_direction = 0 if direction.x >= 0.0 else 2
 
 	else:
 
-		if direction.y >= 0.0:
-			new_direction = 1
-		else:
-			new_direction = 3
+		new_direction = 1 if direction.y >= 0.0 else 3
 
 	if new_direction != facing_direction:
+
 		facing_direction = new_direction
 
 		update_attack_direction()
 		play_current_animation()
 
 
-# --------------------------------------------------
-# ATTACK AREA ROTATION
-# --------------------------------------------------
-
 func update_attack_direction() -> void:
 
 	attack_area.rotation = facing_direction * PI / 2.0
 
 
-# --------------------------------------------------
-# ANIMATION CONTROL
-# --------------------------------------------------
+# ==================================================
+# ANIMATION
+# ==================================================
 
 func play_current_animation() -> void:
 
@@ -168,6 +159,7 @@ func play_current_animation() -> void:
 		State.DEAD:
 			animation_name = "death"
 
+	# Check that the animation exists
 	if not animated_sprite.sprite_frames.has_animation(animation_name):
 		push_warning("Missing enemy animation: " + animation_name)
 		return
@@ -185,47 +177,106 @@ func change_state(new_state: State) -> void:
 	play_current_animation()
 
 
-# --------------------------------------------------
-# ATTACKING
-# --------------------------------------------------
+func _on_animated_sprite_2d_animation_finished() -> void:
+
+	match current_state:
+
+		State.ATTACK:
+
+			if player_chase and is_instance_valid(player):
+				change_state(State.CHASE)
+			else:
+				change_state(State.IDLE)
+
+		State.DEAD:
+			queue_free()
+
+
+# ==================================================
+# COMBAT & ATTACKING
+# ==================================================
 
 func start_attack() -> void:
-	has_damaged_player = false
+
 	change_state(State.ATTACK)
+
+	# Damage the player if they are within attack range
+	if is_instance_valid(player) and attack_area.overlaps_body(player):
+		if player.has_method("take_damage"):
+			player.take_damage(attack_damage)
+
 	attack_cooldown.start()
 
 
-# --------------------------------------------------
-# ANIMATION FINISHED SIGNAL
-# --------------------------------------------------
+# ==================================================
+# HEALTH & DAMAGE
+# ==================================================
 
-func _on_animated_sprite_2d_animation_finished() -> void:
+func take_damage(amount: int) -> void:
 
-	if current_state == State.ATTACK:
+	if current_state == State.DEAD:
+		return
 
-		if player_chase and is_instance_valid(player):
-			change_state(State.CHASE)
-		else:
-			change_state(State.IDLE)
+	current_health -= amount
+	print("Enemy health: ", current_health)
 
-	elif current_state == State.DEAD:
-		queue_free()
+	if current_health <= 0:
+		die()
+	else:
+		flash_sprite()
 
 
-# --------------------------------------------------
+func die() -> void:
+
+	if current_state == State.DEAD:
+		return
+
+	velocity = Vector2.ZERO
+	attack_cooldown.stop()
+
+	player_chase = false
+	player = null
+
+	change_state(State.DEAD)
+
+	# Stop enemy movement while death animation plays
+	set_physics_process(false)
+
+
+# ==================================================
+# DAMAGE FLASH
+# ==================================================
+
+func flash_sprite() -> void:
+
+	# Stop an existing flash effect
+	if flash_tween and flash_tween.is_running():
+		flash_tween.kill()
+
+	animated_sprite.modulate = Color(1.0, 0.3, 0.3)
+
+	flash_tween = create_tween()
+
+	flash_tween.tween_property(
+		animated_sprite,
+		"modulate",
+		Color.WHITE,
+		0.12
+	)
+
+
+# ==================================================
 # PLAYER DETECTION
-# --------------------------------------------------
+# ==================================================
 
 func _on_enter_body_entered(body: Node2D) -> void:
 
-	if body.is_in_group("player") or body.name == "Player":
+	if body.is_in_group("player") and body is CharacterBody2D:
 
-		if body is CharacterBody2D:
+		player = body
+		player_chase = true
 
-			player = body
-			player_chase = true
-
-			change_state(State.CHASE)
+		change_state(State.CHASE)
 
 
 func _on_exit_body_exited(body: Node2D) -> void:
@@ -238,42 +289,3 @@ func _on_exit_body_exited(body: Node2D) -> void:
 		velocity = Vector2.ZERO
 
 		change_state(State.IDLE)
-
-
-# --------------------------------------------------
-# DAMAGE FLASH
-# --------------------------------------------------
-
-func flash_sprite() -> void:
-
-	animated_sprite.modulate = Color(1.0, 0.2, 0.2)
-
-	var tween = create_tween()
-
-	tween.tween_property(
-		animated_sprite,
-		"modulate",
-		Color.WHITE,
-		0.15
-	)
-
-func take_damage(amount: int) -> void:
-	if current_state == State.DEAD:
-		return
-
-	current_health -= amount
-	print("Enemy health: ", current_health)
-
-	flash_sprite()
-
-	if current_health <= 0:
-		die()
-
-
-func die() -> void:
-	velocity = Vector2.ZERO
-	attack_cooldown.stop()
-
-	change_state(State.DEAD)
-
-	set_physics_process(false)

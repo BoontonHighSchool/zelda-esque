@@ -355,6 +355,7 @@ shape = SubResource("CircleShape2D_xxcha")
 [node name="DialogueLayer" type="CanvasLayer" parent="." unique_id=1824464371]
 
 [node name="DialoguePanel" type="Panel" parent="DialogueLayer" unique_id=1013503627]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 anchors_preset = -1
 anchor_top = 1.0
@@ -375,9 +376,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -103.5
-offset_top = -11.5
+offset_top = -22.5
 offset_right = 103.5
-offset_bottom = 11.5
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
